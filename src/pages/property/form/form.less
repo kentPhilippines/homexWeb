@@ -1,0 +1,250 @@
+.search-head {
+  padding: 20px 50px;
+  width: 100%;
+  height: 114px;
+  border-bottom: 1px solid #e4e4e4;
+  .search-head-logo {
+    height: 100px;
+    cursor: pointer;
+    img {
+      width: 70px;
+      height: 70px;
+    }
+    span {
+      font-size: 30px;
+    }
+  }
+  .search-top {
+    position: relative;
+    margin-top: 30px;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    .search-status {
+      display: inline-block;
+      padding: 0 20px;
+      cursor: pointer;
+      border-right: 1px solid #F2F2F2;
+    }
+  }
+  .search-addForm {
+    position: absolute;
+    top: 30px;
+    right: 0px;
+  }
+}
+.content-body {
+  padding: 20px 50px;
+  width: 100%;
+  height: calc( 100% - 114px);
+  font-size: 14px;
+  .content-body-list {
+    margin-bottom: 20px;
+    .user-avator {
+      width: 30px;
+      height: 30px;
+      margin-right: 20px;
+    }
+    .complaint-status {
+      display: inline-block;
+      width: 100px;
+      text-align: center;
+      border-radius: 10px;
+      background: #1890ff;
+    }
+    .content-img {
+      float: left;
+      margin: 10px;
+      width: 200px;
+      height: 150px;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  
+  .search-center {
+    margin: 10px 0;
+    width: 100%;
+    height: 40px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .form-table {
+    margin-top: 10px;
+    width: 100%;
+    font-size: 16px;
+    .ant-table-thead {
+      font-size: 18px;
+    }
+    .form-table-owner {
+      width: 100%;
+      height: 40px;
+      padding: 0 20px;
+      line-height: 40px;
+      font-size: 16px;
+      font-weight: bold;
+      background: #fafafa;
+      span {
+        display: inline-block;
+        padding: 0 10px;
+      }
+    }
+  }
+}
+.redText {
+  color: #D9001B;
+}
+.form-body {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding-top: 50px;
+  .form-body-title {
+    margin: 0 auto;
+    width: 500px;
+    height: 60px;
+    line-height: 60px;
+    font-size: 25px;
+    text-align: center;
+  }
+  .form-body-form {
+    margin: 0 auto;
+    padding: 0 30px;
+    width: 580px;
+    min-height: 200px;
+    font-size: 22px;
+    line-height: 50px;
+    border-radius: 20px;
+    .form-body-form-input {
+      width: 400px;
+    }
+    .form-body-form-input-small {
+      width: 360px;
+    }
+  }
+}
+.modal-body {
+  width: 100%;
+  min-height: 200px;
+  max-height: 560px;
+  .modal-body-type {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    .modal-body-type-owner {
+      float: left;
+      // width: 98%;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      background: #D9001B;
+      color: white;
+    }
+    .modal-body-type-tenant {
+      float: left;
+      // width: 98%;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      background: #0000FF;
+      color: white;
+    }
+  }
+  .modal-body-condo {
+    width: 100%;
+    max-height: 500px;
+    overflow: auto;
+    .modal-body-card {
+      float: left;
+      margin: 10px 20px;
+      width: 260px;
+      height: 120px;
+      background: white;
+      text-align: center;
+      cursor: pointer;
+      .modal-body-condo-body {
+        width: 260px;
+        height: 120px;
+        .modal-body-condo-title-owner {
+          width: 100%;
+          height: 30px;
+          line-height: 30px;
+          background: #D9001B;
+          color: white;
+        }
+        .modal-body-condo-title-tenant {
+          width: 100%;
+          height: 30px;
+          line-height: 30px;
+          background: #0000FF;
+          color: white;
+        }
+        .modal-body-condo-card {
+          width: 260px;
+          height: 90px;
+          display: table-cell;
+          vertical-align: middle;
+          border: 1px solid #D7D7D7;
+          .modal-body-condo-top {
+            vertical-align:middle;
+            font-size: 18px;
+            font-weight: bold;
+          }
+          .modal-body-condo-bottom {
+            vertical-align:middle;
+            font-size: 17px;
+            font-weight: bold;
+            color: red;
+          }
+        }
+      }
+    }
+  }
+}
+.modal-body-card:hover {
+  background: #D7D7D7;
+}
+
+.account-body {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding-top: 50px;
+  .account-title {
+    margin: 0 auto;
+    width: 800px;
+    height: 60px;
+    line-height: 60px;
+    font-size: 25px;
+    text-align: center;
+    background: #f2f2f2;
+  }
+  .account-card {
+    margin: 0 auto;
+    padding: 0 30px;
+    width: 800px;
+    height: 470px;
+    font-size: 22px;
+    line-height: 60px;
+    overflow: auto;
+    .account-card-label {
+      text-align: left;
+    }
+    .account-card-content {
+      margin-top: 20px;
+      line-height: 60px;
+      border-bottom: 1px solid #f2f2f2;
+      img{
+        float: left;
+        margin-right: 3%;
+        width: 100px;
+        height: 100px;
+      }
+    }
+  }
+}
