@@ -37,7 +37,7 @@
           :pageSize="pageSize"
           @change="handlePageChange"
           style="float:right;margin:16px 0;"/>
-        </div> 
+        </div>
     </div>
   </div>
 </template>
@@ -47,7 +47,7 @@ export default {
   name: 'blacklist',
 	data () {
 		return {
-      userID: '',
+      userId: '',
       condoName: '',
       columns: [
         {
@@ -128,7 +128,7 @@ export default {
     },
     getBlacklist() {
       let params = {
-        userID: this.userID,
+        userId: this.userId,
         currentPage: this.currentPage,
         pageSize: this.pageSize
       }
@@ -191,7 +191,7 @@ export default {
     }
   },
 	created() {
-    this.userID = JSON.parse(localStorage.getItem('userInfo')).userID
+    this.userId = JSON.parse(localStorage.getItem('userInfo')).userId
     this.getBlacklist()
 	}
 }

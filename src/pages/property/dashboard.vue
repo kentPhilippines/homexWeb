@@ -133,7 +133,7 @@ export default {
   methods: {
     getTowerList() {
       let params = {
-        userID: this.userInfo.userID
+        userId: this.userInfo.userId
       }
       this.$http({
         url: this.$http.adornUrl('/dev-api/getTowerList'),
@@ -201,7 +201,7 @@ export default {
 
     getTodoList() {
       let params = {
-				userID: this.userInfo.userID
+        userId: this.userInfo.userId
 			}
 			this.$http({
         url: this.$http.adornUrl('/dev-api/getNotice'),
@@ -231,7 +231,7 @@ export default {
     },
     deleteTodo(todo) {
       let params = {
-        userID: this.userInfo.userID,
+        userId: this.userInfo.userId,
         noticeID: notice.id
       }
       this.$http({
@@ -254,7 +254,7 @@ export default {
 
     getNoticeList() {
       let params = {
-				userID: this.userInfo.userID
+        userId: this.userInfo.userId
 			}
 			this.$http({
         url: this.$http.adornUrl('/dev-api/getNotice'),
@@ -278,7 +278,7 @@ export default {
     },
     deleteNotice(notice) {
       let params = {
-        userID: this.userInfo.userID,
+        userId: this.userInfo.userId,
         noticeID: notice.id
       }
       this.$http({

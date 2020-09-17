@@ -357,10 +357,8 @@ export default {
               //   password: '123456',
               //   userRole: '6',  // 1超级管理员、2经理、3员工，4物业、5前台，6房东、7租客
               // }
-              debugger;
-              localStorage.setItem('userInfo', JSON.stringify(userInfo))
+               localStorage.setItem('userInfo', JSON.stringify(userInfo))
               this.$message.success('success login', 3)
-
               let rootMenu = []
               let routerMemu = []
               let routerlist = []
@@ -493,7 +491,6 @@ export default {
             } else {
               this.logging = false
               this.error = res.data.message
-
             }
           })
         }

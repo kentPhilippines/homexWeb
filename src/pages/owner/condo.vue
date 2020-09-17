@@ -81,7 +81,7 @@ export default {
   methods: {
     getCondoList() {
       let params = {
-        userID: this.userID,
+        userId: this.userId,
         condoName: '',
         currentPage: '',
         pageSize: ''
@@ -145,7 +145,7 @@ export default {
     },
     getUnitList() {
       let params = {
-        userID: this.userID,
+        userId: this.userId,
         condo: this.condoChoose,
         tower: this.towerChoose,
         unit: this.towerInput
@@ -201,7 +201,7 @@ export default {
     }
   },
   created() {
-    this.userID = JSON.parse(localStorage.getItem('userInfo')).userID
+    this.userId = JSON.parse(localStorage.getItem('userInfo')).userId
     this.getCondoList()
     this.getTowerList()
   }

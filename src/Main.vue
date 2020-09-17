@@ -272,7 +272,7 @@ export default {
 		// 获取notice
 		getNoticeList() {
 			let params = {
-				userID: this.userInfo.userID
+				userId: this.userInfo.userId
 			}
 			this.$http({
         url: this.$http.adornUrl('/dev-api/notice/getNotice'),
@@ -280,10 +280,9 @@ export default {
         params: this.$http.adornParams({...params})
       }).then((res) => {
         if (res.status == 200) {
-          debugger;
 					this.noticeList = []
-					this.noticeTotal = res.data.result.noticeTotal
-					this.noticeList = res.data.result.noticeList
+					this.noticeTotal = res.data.result.length
+					this.noticeList = res.data.result
         } else {
           this.logging = false
           this.$message.error(res.data.message)

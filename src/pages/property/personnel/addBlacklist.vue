@@ -54,7 +54,7 @@ export default {
 	data () {
 		return {
       type: 'add',
-      userID: '',
+      userId: '',
       addform: this.$form.createForm(this),
       towerList: [],
       blackID: null
@@ -80,7 +80,7 @@ export default {
                 phone: this.addform.getFieldValue('phone'),
                 reason: this.addform.getFieldValue('reason'),
                 idnumber: this.addform.getFieldValue('idnumber'),
-                userID: this.userID,
+                userId: this.userId,
               })
             }).then((res) => {
               if (res.status == 200) {
@@ -121,7 +121,7 @@ export default {
     },
   },
 	created() {
-    this.userID = JSON.parse(localStorage.getItem('userInfo')).userID
+    this.userId = JSON.parse(localStorage.getItem('userInfo')).userId
     let info = this.$router.currentRoute.query.blackInfo
     if (!info) {
       this.type = 'add'
@@ -138,7 +138,7 @@ export default {
         })
       }, 0)
     }
-		
+
 	}
 }
 </script>

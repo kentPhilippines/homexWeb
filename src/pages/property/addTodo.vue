@@ -78,7 +78,7 @@ export default {
     },
     getTowerList() {
       let params = {
-        userID: this.userInfo.userID
+        userId: this.userInfo.userId
       }
       this.$http({
         url: this.$http.adornUrl('/dev-api/getTowerList'),
@@ -101,10 +101,10 @@ export default {
     },
     getUnitList() {
       let params = {
-        userID: this.userInfo.userID,
+        userId: this.userInfo.userId,
         tower: this.towerChoose || '',
         unit: '',
-        condo: this.userInfo.userID,
+        condo: this.userInfo.userId,
       }
       this.$http({
         url: this.$http.adornUrl('/dev-api/getUnitList'),
@@ -132,7 +132,7 @@ export default {
         toUnit: this.towerUnit1 + (this.towerUnit2? ('-'+this.towerUnit2): ''),//this.towerInput,
         subject: this.subject,
         content: this.content,
-        userID: this.userInfo.userID
+        userId: this.userInfo.userId
       }
       this.$http({
         url: this.$http.adornUrl('/dev-api/addNotice'),

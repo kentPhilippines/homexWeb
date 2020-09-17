@@ -61,7 +61,7 @@ export default {
   methods: {
     getTowerList() {
       let params = {
-        userID: this.userInfo.userID
+        userId: this.userInfo.userId
       }
       this.$http({
         url: this.$http.adornUrl('/dev-api/getTowerList'),

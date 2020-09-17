@@ -23,7 +23,7 @@
               <div class="search-status" @click="changeStatus('rejected')">Rejected</div>
               <div class="search-status" @click="changeStatus('pending')" style="border-right:none;">Pending</div>
             </div>
-          </a-col> 
+          </a-col>
           <a-col :span="4">
             <a-button v-if="userRole > 5" class="search-addForm" type="primary" @click="showChooseModal()">New Work Permit Form</a-button>
           </a-col>
@@ -100,15 +100,15 @@
             :pageSize="pageSize"
             @change="handlePageChange"
             style="float:right;margin:16px 0;"/>
-        </div> 
+        </div>
       </div>
     </div>
     <div v-else-if="type == 'form'">
       <div class="form-body">
         <div class="form-body-title">Work Permit Form</div>
-        <a-form class="form-body-form" 
-          :labelCol="{xs: { span: 24 },sm: { span: 6 }}" 
-          :wrapperCol="{xs: { span: 24 },sm: { span: 18 }}" 
+        <a-form class="form-body-form"
+          :labelCol="{xs: { span: 24 },sm: { span: 6 }}"
+          :wrapperCol="{xs: { span: 24 },sm: { span: 18 }}"
           layout="inline" @submit="sendForm">
           <a-form-item label="Condo" required>
             <a-input class="form-body-form-input" v-model="chooseCondo" :disabled="true"></a-input>
@@ -132,7 +132,7 @@
               <a-time-picker v-model="addTenantInfo.endTimeFor" format="HH:mm" placeholder="Select Time" style="width:49%;" @change="changeEndTime"></a-time-picker>
             </div>
           </a-form-item>
-          
+
           <a-form-item label="Name/Contractor" required>
             <a-input class="form-body-form-input" v-model="addTenantInfo.name"></a-input>
           </a-form-item>
@@ -145,7 +145,7 @@
           <a-form-item label="Tools/material" required>
             <a-input class="form-body-form-input" v-model="addTenantInfo.tool"></a-input>
           </a-form-item>
-          
+
           <div v-if="isLack" class="redText ant-form-explain ant-form-extra" style="width:600px;left:0px;top:inherit;">Please complete the information</div>
           <div style="margin-top:20px;width:100%;text-align:right;">
             <a-button type="primary" html-type="submit">Send</a-button>
@@ -206,7 +206,7 @@ export default {
   data () {
     return {
       type: 'list',
-      
+
       user: '',
       userRole: '',
       status: 'all',
@@ -214,7 +214,7 @@ export default {
       towerChoose: '',
       towerList: [],
       towerInput: '',
-      
+
       loading: false,
       formData: [],
 
@@ -251,7 +251,7 @@ export default {
     },
     getTowerList() {
       let params = {
-        userID: this.userID
+        userId: this.userId
       }
       this.$http({
         url: this.$http.adornUrl('/dev-api/getTowerList'),
@@ -280,7 +280,7 @@ export default {
     },
     getForms() {
       let params = {
-        userID: this.userID,
+        userId: this.userId,
         status: this.status,
         tower: this.towerChoose,
         unit: this.towerInput,
@@ -327,7 +327,7 @@ export default {
     getHistory() {
       this.currentPage = 1
       let params = {
-        userID: this.userID,
+        userId: this.userId,
         status: this.status,
         tower: this.towerChoose,
         unit: this.towerInput,
@@ -373,7 +373,7 @@ export default {
     },
     approveForm(forms) {
       let params = {
-        userID: this.userID,
+        userId: this.userId,
         oldstatus: 'pending',
         newstatus: 'approved',
         formID: forms.id,
@@ -408,7 +408,7 @@ export default {
       this.workpermitform.validateFields(async (err, values) => {
         if (!err) {
           let params = {
-            userID: this.userID,
+            userId: this.userId,
             oldstatus: 'pending',
             newstatus: 'rejected',
             formID: this.rejectInfo.id,
@@ -434,7 +434,7 @@ export default {
     },
     confirmForm(forms) {
       let params = {
-        userID: this.userID,
+        userId: this.userId,
         oldstatus: 'approved',
         newstatus: 'finished',
         formID: forms.id,
@@ -457,7 +457,7 @@ export default {
     },
     deleteForm(forms) {
       let params = {
-        userID: this.userID,
+        userId: this.userId,
         formID: forms.id
       }
       this.$http({
@@ -546,7 +546,7 @@ export default {
       this.addTenantInfo.endTime = timeString
     },
     sendForm() {
-      if (!this.addTenantInfo.startDate || !this.addTenantInfo.endDate 
+      if (!this.addTenantInfo.startDate || !this.addTenantInfo.endDate
       || !this.addTenantInfo.startTime || !this.addTenantInfo.endTime
       || !this.addTenantInfo.name || !this.addTenantInfo.phone
       || !this.addTenantInfo.work || !this.addTenantInfo.tool ) {
